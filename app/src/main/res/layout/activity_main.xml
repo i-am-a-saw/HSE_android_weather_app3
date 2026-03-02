@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:layout_marginBottom="44sp"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageHeader"
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:contentDescription="@string/app_name"
+        android:scaleType="centerCrop"
+        android:src="@drawable/header"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/header_layer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/imageHeader"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:orientation="vertical"
+        android:gravity="center_vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/viewSupporter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:text="Weather Forecast"
+            android:textSize="25sp"
+            android:textColor="@color/colorWhite"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Let it sun!"
+            android:includeFontPadding="false"
+            android:textSize="20sp"
+            android:textColor="@color/colorWhite"/>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/viewSupporter"
+        android:layout_width="1dp"
+        android:layout_height="1dp"
+        android:layout_marginBottom="80dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageHeader"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/login_background"
+        android:paddingHorizontal="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/viewSupporter">
+
+        <TextView
+            android:id="@+id/textWelcome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="25dp"
+            android:gravity="center"
+            android:text="Welcome"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <AutoCompleteTextView
+            android:id="@+id/inputEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginTop="20dp"
+            android:background="@null"
+            android:hint="Your city..."
+            android:imeOptions="actionNext"
+            android:inputType="textCapSentences"
+            android:minHeight="48dp"
+            android:paddingStart="40dp"
+            android:paddingEnd="10dp"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="15sp"
+            app:layout_constraintTop_toBottomOf="@id/textWelcome"
+            tools:ignore="Autofill"
+            tools:layout_editor_absoluteX="40dp"
+            android:completionThreshold="0"
+            android:dropDownAnchor="@id/inputEmail"
+            android:dropDownHeight="140dp"/>
+
+        <View
+            android:id="@+id/viewDividerEmail"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginTop="0dp"
+            android:background="@color/colorTextHint"
+            app:layout_constraintTop_toBottomOf="@id/inputEmail" />
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="0dp"
+            android:contentDescription="email blya"
+            android:src="@drawable/city"
+            app:layout_constraintBottom_toBottomOf="@id/inputEmail"
+            app:layout_constraintStart_toStartOf="@id/inputEmail"
+            app:layout_constraintTop_toTopOf="@+id/inputEmail"
+            app:tint="@color/colorTextHint" />
+
+        <EditText
+            android:id="@+id/inputPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="0dp"
+            android:background="@null"
+            android:enabled="false"
+            android:hint="Time period:"
+            android:imeOptions="actionDone"
+            android:inputType="textPassword"
+            android:minHeight="48dp"
+            android:paddingStart="36dp"
+            android:paddingEnd="10dp"
+            android:textColor="#ffffff"
+            android:textColorHint="@color/s_colorPrimaryText"
+            android:textSize="15sp"
+            app:layout_constraintTop_toBottomOf="@id/viewDividerEmail"
+            tools:ignore="Autofill"
+            tools:layout_editor_absoluteX="35dp" />
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:contentDescription="pass suka"
+            android:src="@drawable/time"
+            app:layout_constraintBottom_toBottomOf="@+id/inputPassword"
+            app:layout_constraintStart_toStartOf="@id/inputPassword"
+            app:layout_constraintTop_toTopOf="@id/inputPassword"
+            app:tint="#000000" />
+
+        <RadioGroup
+            android:id="@+id/group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="start"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/inputPassword">
+
+
+            <RadioButton
+                android:id="@+id/b1"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="Today"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="13sp" />
+
+            <RadioButton
+                android:id="@+id/b2"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+
+                android:text="Tomorrow"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="13sp" />
+
+            <RadioButton
+                android:id="@+id/b3"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="3 days"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="13sp" />
+
+
+            <RadioButton
+                android:id="@+id/b4"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="10 days"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="13sp" />
+
+            <RadioButton
+                android:id="@+id/b5"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+
+                android:text="Weekends"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="13sp" />
+
+
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/get_forecast_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:background="@drawable/secondary_button"
+            android:text="Get Forecast"
+            android:textColor="@color/colorPrimary"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
